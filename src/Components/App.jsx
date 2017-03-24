@@ -1,14 +1,16 @@
 import React from 'react';
 
+import Header from './Header/Head.jsx';
+import Article from './Article/Article.jsx';
+import Footer from './Footer/Footer.jsx';
+
 const App = React.createClass({
 	render() {
 		return (
-			<div>{this.props.name}
-				<h2 className='header'>我是二级标题</h2>
-				<div className='center'>我错了</div>
-				<p className='footer'>Hello World</p>
-				<p className='foot'>Greed is Good!</p>
-				<p>666</p>
+			<div className={this.props.name}>
+				<Header name='Header' />
+				<Article name='Article'/>
+				<Footer name='Footer'/>
 			</div>
 		)
 	}
