@@ -1,40 +1,34 @@
 import React from 'react';
 
-function Menu(props) {
-const headListDateB = ['糯米','新闻','hao123','地图','视频','贴吧'];
-	return (
-		<div>
-				<a>
-		<strong>{headListDateB[0]}</strong>
-	</a>
-	<a>
-		<strong>{headListDateB[1]}</strong>
-	</a>
-	<a>
-		<strong>{headListDateB[2]}</strong>
-	</a>
-	<a>
-		<strong>{headListDateB[3]}</strong>
-	</a>
-	<a>
-		<strong>{headListDateB[4]}</strong>
-	</a>
-	<a>
-		<strong>{headListDateB[5]}</strong>
-	</a>
-		</div>
+var pic = require('file-loader!./test.bmp')
+const Input = React.createClass({
+	render(){
+		return(
+			<div className={this.props.setClass}>
+				<input type={this.props.setType} placeholder='请输入内容'/>
+			</div>
+		)
+	}
+})
 
+function Pic(props){
+	return (
+		<div className={props.setClass}>{props.value}
+			<img src={props.setSrc} alt=""/>
+			<div className="pic"></div>
+			<div data-id={props.setId}>{props.name}</div>
+		</div>
 	)
 }
 
-const headListDate = ['登录','设置'];
-
 const Article = React.createClass({
+	
 	render(){
 		return(
-			<div className='article'>
-				<Menu />
-			</div>
+			<article className={this.props.name}>
+				<Pic value='我是图片部分' setClass='picWapper' setId='myId' name=''/>
+				<Input setClass='inputWapper' setType='text' />
+			</article>
 		)
 	}
 })

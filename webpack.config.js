@@ -52,6 +52,12 @@ module.exports = {
 			use: [{
 				loader: 'babel-loader',
 			}]
+		}, {
+			test: /\.(jpg|png|gif|svg)$/,
+			use: [{
+				loader: 'url?limit=10000&name=img/[name].[hash].[ext]',
+				loader: 'file-loader'
+			}]
 		}],
 	},
 	plugins: [
@@ -59,7 +65,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			// title: 'My App',
 			filename: 'index.html',
-			template: './index.html'
-		})
+			template: './index.html',
+		}),
 	]
 }
