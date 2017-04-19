@@ -1,4 +1,5 @@
 import React from 'react';
+import Item from './List/List.jsx'
 
 var pic = require('file-loader!./test.bmp')
 const Input = React.createClass({
@@ -26,8 +27,7 @@ const Article = React.createClass({
 	render(){
 		return(
 			<article className={this.props.name}>
-				<Pic value='我是图片部分' setClass='picWapper' setId='myId' name=''/>
-				<Input setClass='inputWapper' setType='text' />
+				<Item name='+' setClass='myItem'/>
 			</article>
 		)
 	}

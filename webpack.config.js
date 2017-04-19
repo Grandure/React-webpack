@@ -32,7 +32,7 @@ module.exports = {
 		hot: true,
 		watchContentBase: true
 	},
-	devtool: "cheap-eval-source-map",
+	devtool: "cheap-module-source-map",
 	module: {
 		rules: [{
 			test: /\.less$/,
@@ -42,9 +42,9 @@ module.exports = {
 				loader: 'css-loader'
 			}, {
 				loader: 'less-loader',
-				options: {
-					resources: './src/stylesheets/index.scss',
-				},
+				// options: {
+				// 	resources: './src/stylesheets/index.less',
+				// },
 			}, ],
 		}, {
 			test: /\.(js|jsx)$/,
