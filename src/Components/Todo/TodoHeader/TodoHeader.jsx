@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'react-bootstrap';
 
-import Item from '../Item/Item.jsx';
+import ItemShow from './Item/ItemShow.jsx';
+import ItemEditor from './Item/ItemEditor.jsx';
 import './TodoHeader.less';
 
 class TodoHeader extends React.Component{
@@ -54,11 +55,11 @@ class TodoHeader extends React.Component{
 					   onClick={this.clickHandle.bind(this)}/>
 				<ul>
 					{this.state.content.map((data, index)=>
-						<Item key={index} 
+						<ItemShow key={index} 
 						 	  deleteItem={this.deleteHandle.bind(this)} 
 						 	  dataIndex={index} 
 						 	  mydata={data}>
-						</Item>)}
+						</ItemShow>)}
 				</ul>
 			</div>
 		)
